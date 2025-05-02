@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Syed Ansab Waqar Gillani – Resume</title>
+
+  <!-- Font Awesome via jsDelivr -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+  />
+
+
+  <style>
+    /* ====== Base & Variables ====== */
+    :root {
+      --primary: #000;
+      --bg: #f7f7f7;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fff;
+      font-family: 'Times New Roman', serif;
+      color: var(--primary);
+      line-height: 1.55;
+      padding: 0px;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ====== Container ====== */
+    .resume-container {
+      /*max-width: 800px;*/
+      margin: 0 auto;
+      background: #fff;
+      padding: 0px 0px;
+      border-radius: 6px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ====== Header ====== */
+    .header {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .name {
+      font-size: 2.0rem;
+      margin-bottom: 3px;
+    }
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 0.75em;
+      margin: 0 auto;
+      width: 85%;
+      color: var(--primary);
+    }
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      width: 33%;
+      justify-content: center;
+    }
+    .contact-list i {
+      margin-right: 6px;
+      color: var(--primary);
+      font-size: 0.75em;
+    }
+
+    /* ====== Sections ====== */
+    .section {
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: 0.9rem;
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+      padding-bottom: 0px;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+    .section-title i {
+      margin-right: 8px;
+    }
+
+    /* ====== Profile ====== */
+    .profile-text {
+      color: var(--primary);
+      font-size: 0.75rem;
+      text-align: justify;
+    }
+
+    /* ====== Experience ====== */
+    .position {
+      margin-bottom: 5px;
+
+      .position-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 0px;
+      }
+
+      .role {
+        font-size: 0.85em;
+        font-weight: 600;
+      }
+
+      .date {
+        font-size: 0.75rem;
+        color: var(--primary);
+      }
+
+      .company {
+        font-style: italic;
+        font-size: 0.85em;
+        color: var(--primary);
+      }
+
+      .responsibilities {
+        list-style: disc;
+        margin-left: 20px;
+        color: var(--primary);
+        font-size: 0.75em;
+        text-align: justify;
+      }
+
+      .responsibilities li {
+        margin-bottom: 0px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- Header -->
+    <header class="header">
+      <h1 class="name">Syed Ansab Waqar Gillani</h1>
+      <ul class="contact-list">
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:syedansab500@gmail.com">syedansab500@gmail.com</a>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          +49 176 35879923
+        </li>
+        <li>
+          <i class="fa-solid fa-map-marker-alt"></i>
+          Nuremberg, Germany
+        </li>
+        <li>
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="#">Syed Ansab Waqar Gillani</a>
+        </li>
+      </ul>
+    </header>
+
+    <!-- Profile -->
+    <section class="section profile">
+      <h2 class="section-title">
+        <i class="fa-solid fa-id-card"></i> Profile
+      </h2>
+      <p class="profile-text">
+        Senior Software Engineer &amp; AI/Cloud Specialist with 4+ years of experience building scalable AI-driven solutions,
+        cloud-native architectures, and high-performing engineering teams. Proven track record in optimizing system performance
+        (+30%), leading Agile teams, and driving revenue growth (+23%) for global platforms. Passionate about AI, fraud detection,
+        engineering automation, and microservices.
+      </p>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="section experience">
+      <h2 class="section-title">
+        <i class="fa-solid fa-briefcase"></i> Professional Experience
+      </h2>
+
+      <!-- Position 1 -->
+      <article class="position">
+        <div class="position-header">
+          <h3 class="role">Product Engineer (Werkstudent)</h3>
+          <span class="date">04/2024 – Present</span>
+        </div>
+        <div class="company">Migiro</div>
+        <ul class="responsibilities">
+          <li>
+            Led MVP development for a startup, designing frontend/backend infrastructure with React, Next.js, Python (Django/Flask),
+            and integrating OpenAI LLMs, supporting 1,000+ providers and 15,000+ consumers in Q4 2024.
+          </li>
+          <li>
+            Developed AI-powered image and document analysis models using TensorFlow/PyTorch, achieving 15,000+ document
+            authentications with a &lt;0.001% error rate.
+          </li>
+          <li>
+            Designed fraud detection algorithms using NLP and anomaly detection models, flagging 50+ potential threats in
+            Q4 2024, improving consumer safety.
+          </li>
+          <li>
+            Built and led two engineering teams (4 members each), achieving 9+/10 engineer satisfaction and 9.5+/10 leadership
+            ratings through Agile coaching and mentorship.
+          </li>
+        </ul>
+      </article>
+
+      <!-- Position 2 -->
+      <article class="position">
+        <div class="position-header">
+          <h3 class="role">Software Engineer</h3>
+          <span class="date">01/2023 – 03/2024</span>
+        </div>
+        <div class="company">Agoda</div>
+        <ul class="responsibilities">
+          <li>
+            Developed personalized resolution algorithms in Python and UI enhancements, increasing user engagement by 16%
+            and driving a 4% revenue boost.
+          </li>
+          <li>
+            Architected microservices using React (TypeScript), Node.js and Django optimizing queries and improving system
+            performance by 30%, ensuring seamless scalability for millions of users.
+          </li>
+          <li>
+            Identified slow query execution and memory leaks using New Relic &amp; Grafana, optimizing database queries and
+            reducing error rates by 22%.
+          </li>
+          <li>
+            Led Agile &amp; Scrum practices, facilitating cross-team collaboration, reducing project timelines by 25%, and
+            improving delivery efficiency.
+          </li>
+          <li>
+            Mentored 5+ junior engineers through pair programming and code reviews, improving their coding proficiency by 35%,
+            fostering a high-performing team.
+          </li>
+          <li>
+            Implemented CI/CD pipelines using Jenkins &amp; GitHub Actions, reducing deployment time by 25% and increasing release
+            frequency by 30%.
+          </li>
+          <li>
+            Introduced dynamic search filters and real-time notifications, increasing user interactions by 25% and enhancing
+            customer experience.
+          </li>
+          <li>
+            Deployed cloud-native microservices on AWS using Kubernetes, Redis, and Kafka, enhancing system efficiency by 35%
+            and ensuring global scalability.
+          </li>
+        </ul>
+      </article>
+
+      <!-- Position 3 -->
+      <article class="position">
+        <div class="position-header">
+          <h3 class="role">Senior Software Engineer</h3>
+          <span class="date">05/2021 – 12/2022</span>
+        </div>
+        <div class="company">Arbisoft</div>
+        <ul class="responsibilities">
+          <li>
+            Developed search and discovery microservices using Python (Django), React (TypeScript), Kafka, and Elasticsearch,
+            optimizing data ingestion for 4M+ customers, increasing revenue by 23%.
+          </li>
+          <li>
+            Built comprehensive E2E testing suite using Cypress &amp; Jest, improving test coverage by 40% and reducing critical
+            bug introduction by 73%.
+          </li>
+          <li>
+            Led MVP development in company-wide Hackathon, securing $100K pre-seed investment for an AdTech AI-powered automation
+            tool, placing runner-up among 10 teams.
+          </li>
+          <li>
+            Organized and led Arbisoft’s annual hiring program, interviewing and hiring 50+ engineers in 2 months; mentored 1 intern,
+            guiding them toward a full-time role.
+          </li>
+        </ul>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
