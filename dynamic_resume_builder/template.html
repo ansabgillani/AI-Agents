@@ -1,0 +1,246 @@
+{# resume_template.html #}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ name }} – Resume</title>
+
+    <!-- Font Awesome via jsDelivr -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+
+    <style>
+      :root {
+        --primary: #000;
+        --bg: #f7f7f7;
+      }
+      *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #fff;
+        font-family: 'Times New Roman', serif;
+        color: var(--primary);
+        line-height: 1.55;
+      }
+      a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        margin: 0 auto;
+        background: #fff;
+        padding: 0;
+        border-radius: 6px;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .header__name {
+        font-size: 2rem;
+        margin-bottom: 3px;
+      }
+      .header__list {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.75em;
+        margin: 0 auto;
+        width: 85%;
+        color: var(--primary);
+      }
+      .header__item {
+        display: flex;
+        align-items: center;
+        width: 33%;
+        justify-content: center;
+      }
+      .icon {
+        margin-right: 6px;
+        color: var(--primary);
+        font-size: 0.75em;
+      }
+
+      .section {
+        margin-bottom: 10px;
+      }
+      .section__title {
+        font-size: 0.9rem;
+        color: var(--primary);
+        border-bottom: 2px solid var(--primary);
+        display: inline-block;
+        margin-bottom: 8px;
+        width: 100%;
+      }
+      .section__title-icon {
+        margin-right: 8px;
+      }
+
+      .profile__text {
+        font-size: 0.75rem;
+        color: var(--primary);
+        text-align: justify;
+      }
+
+      .entry {
+        margin-bottom: 5px;
+      }
+      .entry__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+      }
+      .entry__title {
+        font-size: 0.85em;
+        font-weight: 600;
+      }
+      .entry__date {
+        font-size: 0.75rem;
+      }
+      .entry__company {
+        font-style: italic;
+        font-size: 0.85em;
+      }
+      .entry__list {
+        list-style: disc;
+        margin-left: 20px;
+        font-size: 0.75em;
+        text-align: justify;
+      }
+      .entry__item {
+        margin-bottom: 0;
+      }
+
+      .section--languages .languages__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 0.75em;
+        margin: 0 auto;
+        width: 100%;
+      }
+      .languages__item {
+        display: flex;
+        align-items: center;
+        width: 50%;
+      }
+      .languages__language {
+        font-weight: 600;
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header__name">{{ person.name }}</h1>
+        <ul class="header__list">
+          {% for c in person.contacts %}
+          <li class="header__item">
+            <i class="{{ c.icon }} icon"></i>
+            {% if c.href %}
+              <a href="{{ c.href }}">{{ c.text }}</a>
+            {% else %}
+              {{ c.text }}
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </header>
+
+      <section class="section">
+        <h2 class="section__title">
+          <!-- <i class="fa-solid fa-id-card section__title-icon"></i> -->
+          Profile
+        </h2>
+        <p class="profile__text">{{ person.profile_text }}</p>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">
+          <!-- <i class="fa-solid fa-briefcase section__title-icon"></i> -->
+          Professional Experience
+        </h2>
+        {% for exp in person.experience %}
+        <article class="entry">
+          <div class="entry__header">
+            <h3 class="entry__title">{{ exp.title }}</h3>
+            <span class="entry__date">{{ exp.date }}</span>
+          </div>
+          <div class="entry__company">{{ exp.company }}</div>
+          <ul class="entry__list">
+            {% for item in exp.responsibilities %}
+            <li class="entry__item">{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+        {% endfor %}
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">
+          <!-- <i class="fa-solid fa-graduation-cap section__title-icon"></i> -->
+          Education
+        </h2>
+        {% for edu in person.education %}
+        <article class="entry">
+          <div class="entry__header">
+            <h3 class="entry__title">{{ edu.degree }}</h3>
+            <span class="entry__date">{{ edu.period }}</span>
+          </div>
+          <div class="entry__company">{{ edu.institution }}</div>
+          <ul class="entry__list">
+            <li class="entry__item">{{ edu.desc }}</li>
+          </ul>
+        </article>
+        {% endfor %}
+      </section>
+
+      <section class="section section--languages">
+        <h2 class="section__title">
+          <!-- <i class="fa-solid fa-globe section__title-icon"></i> -->
+          Languages
+        </h2>
+        <div class="languages__list">
+          {% for lang in person.languages %}
+          <div class="languages__item">
+            <span class="languages__language">{{ lang.name }}</span>
+            <span class="languages__level">{{ lang.level }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">
+          <!-- <i class="fa-solid fa-brain section__title-icon"></i> -->
+          Skills
+        </h2>
+        {% for skill in person.skills %}
+        <article class="entry">
+          <div class="entry__header">
+            <h3 class="entry__title" style="font-size:0.75em;">{{ skill.category }}</h3>
+          </div>
+          <ul class="entry__list" style="margin-left:0;">
+            <p class="entry__item">{{ skill.desc }}</p>
+          </ul>
+        </article>
+        {% endfor %}
+      </section>
+    </div>
+  </body>
+</html>

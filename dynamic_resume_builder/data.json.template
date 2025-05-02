@@ -1,0 +1,51 @@
+{
+  "name": "Name",
+  "contacts": [
+    {
+      "icon": "fa-solid fa-envelope",
+      "href": "mailto:email_address",
+      "text": "email_address"
+    },
+    { "icon": "fa-solid fa-phone", "href": null, "text": "phone_number" },
+    {
+      "icon": "fa-solid fa-map-marker-alt",
+      "href": null,
+      "text": "location"
+    },
+    {
+      "icon": "fa-brands fa-linkedin",
+      "href": "link_to_linkedin",
+      "text": "LinkedIn profile name"
+    }
+  ],
+  "profile_text": "Overview of the profile",
+  "experience": [
+    {
+      "title": "Title",
+      "date": "Date",
+      "company": "Company Name",
+      "responsibilities": [
+        "Led MVP development for a startup…",
+        "Developed AI-powered image and document analysis models…",
+        ...
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Degree Name",
+      "period": "Period",
+      "institution": "Institute name",
+      "desc": "Description"
+    },
+  ],
+  "languages": [
+    { "name": "English", "level": "Native/Bilingual" }
+  ],
+  "skills": [
+    {
+      "category": "Skill Category",
+      "desc": "Description"
+    }
+  ]
+}
